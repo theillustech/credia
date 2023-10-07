@@ -1,0 +1,37 @@
+main {
+  margin-top: 4rem;
+  overflow: hidden;
+}
+.main-heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-para {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  letter-spacing: 0.15px;
+}
+
+.ordered-list {
+  margin-left: 1rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-height: 768px) {
+  main {
+    margin-top: 6rem;
+  }
+  .main-heading {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}

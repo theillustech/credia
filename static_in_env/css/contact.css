@@ -1,0 +1,313 @@
+.hero-heading {
+  text-align: center;
+  font-size: 3rem;
+}
+
+#contact-container {
+  margin-top: 6rem;
+}
+
+.contactme {
+  padding: 2rem 0;
+  padding-bottom: 5rem;
+  margin-bottom: 10rem;
+  height: auto;
+}
+.contactme-container {
+  max-width: 90vw;
+  margin: 3rem auto;
+  background: #ebfff5;
+  border-radius: 20px;
+}
+
+.myinfo-container {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background: #00552a;
+  border-radius: 5px;
+  padding: 2rem 0;
+  background-image: url("../img/contact/Trees.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+}
+
+.myinfo-interior-container {
+  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.myinfo-heading,
+.myinfo-para,
+.myinfo-small-heading {
+  margin-left: 1rem;
+}
+
+.myinfo-heading {
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+}
+
+.myinfo-para {
+  color: #dfdfdf;
+  margin-bottom: 2.5rem;
+  max-width: 20rem;
+}
+
+.myinfo-small-heading {
+  margin-bottom: 2rem;
+  color: #efefef;
+  font-weight: 400;
+}
+
+.contact-links {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-out;
+}
+
+.contact-links:hover {
+  color: lightblue;
+}
+
+.fa-phone-alt,
+.fa-envelope,
+.fa-map-marker-alt {
+  border: #efefef solid 1px;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.myinfo-small {
+  margin-left: 1rem;
+}
+
+.contactme-form-container {
+  max-width: 75vw;
+  margin: 2rem auto;
+}
+
+.label-input-container {
+  color: #000;
+  margin: 1rem auto;
+}
+.label-input-container label {
+  display: block;
+  color: #222222;
+}
+/* dropdown-custom */
+button {
+  border: #00552a solid 1px;
+  cursor: pointer;
+  color: #00552a;
+}
+
+button img {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.75rem;
+}
+
+.dropdown-custom {
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+}
+.dropdown-custom .button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.35rem;
+  background-color: #fff;
+}
+.dropdown-custom .arrow-custom {
+  width: 1.25rem;
+  margin-left: auto;
+  fill: currentColor;
+}
+.dropdown-custom .menu {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+.dropdown-custom .menu ul {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  border-radius: 0.35rem;
+  background-color: #fff;
+  list-style: none;
+  border: #00552a solid 1px;
+}
+.dropdown-custom .menu ul li {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  color: #00552a;
+}
+.dropdown-custom .menu ul li:hover {
+  background-color: #ebfff5;
+}
+.dropdown-custom .menu ul li img {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.75rem;
+}
+.dropdown-custom .arrow-custom {
+  transition: transform 0.2s;
+}
+.dropdown-custom .menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.dropdown-custom:hover .arrow-custom {
+  transform: rotate(180deg);
+}
+.dropdown-custom:hover .menu {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-custom--slide .menu {
+  transform: translateY(1rem);
+}
+.dropdown-custom--slide:hover .menu {
+  transform: translateY(0);
+}
+/* End of dropdown-custom */
+
+.label-input-container input,
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  height: 2rem;
+  margin-top: 0.8rem;
+  outline: none;
+  background: rgb(248, 248, 248);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.label-input-container input:focus,
+textarea:focus {
+  border-bottom: 3px solid #00552a;
+  background: rgb(252, 252, 252);
+}
+
+.label-input-container input::placeholder,
+textarea::placeholder {
+  opacity: 0.5;
+  font-weight: lighter;
+}
+
+.label-input-container input[type="submit"] {
+  border-bottom: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #932339;
+  color: #fff;
+  border-radius: 5px;
+  width: 176px;
+  height: 49px;
+  font-size: 0.9rem;
+  letter-spacing: 1.25px;
+  margin: 1rem 0 2rem 0;
+  transition: all 0.3s ease;
+}
+
+.label-input-container input[type="submit"]:hover {
+  background: #daff36;
+  color: #000;
+}
+
+textarea {
+  min-height: 4rem;
+  width: 100%;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+#submit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 928px) {
+  .contactme-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .myinfo-container {
+    flex: 0 0 35%;
+  }
+
+  .myinfo-para {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .myinfo-small-heading {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .contactme-form-container {
+    flex: 0 0 55%;
+    display: grid;
+    margin: 4rem auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr auto 0.5fr;
+    gap: 2rem 2rem;
+    grid-template-areas:
+      "first second"
+      "third fourth"
+      "first-select second-select"
+      "message message";
+  }
+  .first {
+    grid-area: first;
+  }
+  .second {
+    grid-area: second;
+  }
+  .third {
+    grid-area: third;
+  }
+  .fourth {
+    grid-area: fourth;
+  }
+  .first-select {
+    grid-area: first-select;
+  }
+
+  .second-select {
+    grid-area: second-select;
+  }
+  .message {
+    grid-area: message;
+  }
+  .label-input-container {
+    margin: auto 0;
+  }
+
+  .label-input-container p {
+    font-size: 1.4rem;
+  }
+
+  #submit-btn-container {
+    display: unset;
+  }
+
+  .submit {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

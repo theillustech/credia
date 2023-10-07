@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Vendors</title>
+<script src="https://kit.fontawesome.com/ce0f33054f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/ourVendors.css'%}">
+{% endblock title %}
+
+{% block body %}
+<main class="container">
+  <header class="top-container">
+    <div class="search-container">
+      <input type="search" name="search" id="search-box">
+    </div>
+    <h1 class="page-heading">
+      Our Vendors
+    </h1>
+    <div class="filter-container">
+      <div class="dropdown-custom dropdown-custom--slide">
+        <button type="button" class="button" id="supplies-btn">
+          kind of supplies
+          <svg xmlns="http://www.w3.org/2000/svg" class="arrow-custom" viewBox="0 0 20 20">
+            <path
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+          </svg>
+        </button>
+        <div class="menu">
+          <ul id="supplies-menu">
+            <li>Cement</li>
+            <li>Stone</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</main>
+<section class="container vendor-card-container">
+  <!-- individual Card -->
+  <article class="individual-card-container">
+    <!-- Top Container -->
+    <div class="vendor-info-container-top">
+      <div class="vendor-img-container">
+        <img src="{% static 'img/ourVendors/sampleLogo.png' %}" alt="">
+      </div>
+      <div class="vendor-content-container">
+        <h2 class="vendor-company-name">
+          Company Name
+        </h2>
+        <p class="kind-of-suplies"><small>Kind Of Supplies:</small> Copper Pipes, Cement</p>
+      </div>
+    </div>
+    <!-- Bottom Container -->
+    <div class="vendor-info-container-bottom">
+      <h4 class="vendor-location">
+        <i class="fas fa-map-marker"></i>Wanadongri, Nagpur
+      </h4>
+      <div class="contact-vendor">
+        contact vendor<i class="fas fa-long-arrow-alt-right"></i>
+      </div>
+    </div>
+  </article>
+  <!-- individual Card -->
+  <article class="individual-card-container">
+    <!-- Top Container -->
+    <div class="vendor-info-container-top">
+      <div class="vendor-img-container">
+        <img src="{% static 'img/ourVendors/sampleLogo.png' %}" alt="">
+      </div>
+      <div class="vendor-content-container">
+        <h2 class="vendor-company-name">
+          Company Name
+        </h2>
+        <p class="kind-of-suplies"><small>Kind Of Supplies:</small> Copper Pipes, Cement</p>
+      </div>
+    </div>
+    <!-- Bottom Container -->
+    <div class="vendor-info-container-bottom">
+      <h4 class="vendor-location">
+        <i class="fas fa-map-marker"></i>Wanadongri, Nagpur
+      </h4>
+      <div class="contact-vendor">
+        contact vendor<i class="fas fa-long-arrow-alt-right"></i>
+      </div>
+    </div>
+  </article>
+  <!-- individual Card -->
+  <article class="individual-card-container">
+    <!-- Top Container -->
+    <div class="vendor-info-container-top">
+      <div class="vendor-img-container">
+        <img src="{% static 'img/ourVendors/sampleLogo.png' %}" alt="">
+      </div>
+      <div class="vendor-content-container">
+        <h2 class="vendor-company-name">
+          Company Name
+        </h2>
+        <p class="kind-of-suplies"><small>Kind Of Supplies:</small> Copper Pipes, Cement</p>
+      </div>
+    </div>
+    <!-- Bottom Container -->
+    <div class="vendor-info-container-bottom">
+      <h4 class="vendor-location">
+        <i class="fas fa-map-marker"></i>Wanadongri, Nagpur
+      </h4>
+      <div class="contact-vendor">
+        contact vendor<i class="fas fa-long-arrow-alt-right"></i>
+      </div>
+    </div>
+  </article>
+  <!-- individual Card -->
+  <article class="individual-card-container">
+    <!-- Top Container -->
+    <div class="vendor-info-container-top">
+      <div class="vendor-img-container">
+        <img src="{% static 'img/ourVendors/sampleLogo.png' %}" alt="">
+      </div>
+      <div class="vendor-content-container">
+        <h2 class="vendor-company-name">
+          Company Name
+        </h2>
+        <p class="kind-of-suplies"><small>Kind Of Supplies:</small> Copper Pipes, Cement</p>
+      </div>
+    </div>
+    <!-- Bottom Container -->
+    <div class="vendor-info-container-bottom">
+      <h4 class="vendor-location">
+        <i class="fas fa-map-marker"></i>Wanadongri, Nagpur
+      </h4>
+      <div class="contact-vendor">
+        contact vendor<i class="fas fa-long-arrow-alt-right"></i>
+      </div>
+    </div>
+  </article>
+</section>
+<script>
+  const suppliesDropdown = document.querySelector("#supplies-menu")
+  const suppliesBtn = document.querySelector("#supplies-btn")
+
+  const arr = Array.prototype.slice.call(suppliesDropdown.children);
+
+  arr.forEach((li) => {
+    li.addEventListener("click", () => {
+      if (li.classList.contains("selected")) {
+        console.log(li.classList.remove("selected"));
+        suppliesBtn.innerText = "KIND OF SUPPLIES";
+      } else {
+        li.classList.add("selected");
+        suppliesBtn.innerHTML = li.innerHTML;
+      }
+    });
+  });
+</script>
+{% endblock body %}

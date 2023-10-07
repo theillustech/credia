@@ -1,0 +1,222 @@
+main {
+  padding-top: 4.5rem;
+  background: #efefef;
+  height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.main-heading {
+  font-size: 2.125rem;
+  text-transform: capitalize;
+
+  margin-bottom: 0.5rem;
+}
+
+.main-para {
+  margin-bottom: 2rem;
+}
+
+.img-container {
+  margin-top: 4rem;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.header-img {
+  width: 90%;
+  height: auto;
+  z-index: 999;
+  z-index: 20;
+  position: relative;
+}
+
+.img-colored-effect {
+  background: #00552a;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 3.125rem;
+  right: 0;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.primary-btn {
+  border: 2px solid #00552a;
+  background: transparent;
+  color: #00552a;
+}
+
+.main-body-container {
+  margin-top: min(15rem, 66vw);
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.individual-member-container {
+  margin-top: 4rem;
+}
+
+.member-name {
+  color: #932339;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  margin-bottom: 0.5rem;
+}
+
+.member-img-container {
+  position: relative;
+  color: #fff;
+}
+
+.member-img-container::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+
+  display: block;
+
+  padding: 0.5rem 1rem;
+
+  background: rgba(31, 31, 31, 0.7);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.member-title {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#member-1::after {
+  content: "President";
+}
+#member-2::after {
+  content: "Immediate Past President";
+}
+#member-3::after {
+  content: "Hon. Secretary";
+}
+#member-4::after {
+  content: "Treasurer";
+}
+
+.member-img-container > img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.firm-name {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 681px) {
+  main > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-body-container {
+    margin-top: 4rem;
+  }
+
+  .main-para {
+    max-width: 70%;
+  }
+
+  .main-body-container {
+    display: block;
+  }
+
+  .members-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .individual-member-container {
+    background: #00552a;
+    flex: 0 0 calc(50% - 2rem);
+
+    display: flex;
+  }
+
+  .member-img-container {
+    max-width: 215px;
+    max-height: 215px;
+  }
+
+  .member-info-container {
+    color: #fff;
+
+    padding: 1rem;
+    border-radius: 0;
+  }
+
+  .member-title {
+    border: unset;
+    clip: unset;
+    height: unset;
+    margin: unset;
+    overflow: hidden;
+    padding: 0;
+    position: static;
+    width: unset;
+  }
+
+  .firm-name {
+    font-size: min(1rem, 1.5vw);
+  }
+
+  .member-img-container::after {
+    content: "";
+    position: unset;
+    right: 1rem;
+    bottom: 1rem;
+
+    display: block;
+
+    padding: 0;
+
+    background: rgba(31, 31, 31, 0.7);
+    border-radius: 5px;
+    font-size: 0;
+  }
+
+  .member-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .member-name {
+    color: #ffff;
+    font-size: min(1.5rem, 2vw);
+  }
+
+  .member-title {
+    margin-bottom: auto;
+    font-size: min(1.25rem, 1.75vw);
+    font-weight: 300;
+
+    color: #efefef;
+  }
+
+  .contact-info > li {
+    font-size: min(1rem, 1.5vw);
+    color: #dfdfdf;
+  }
+}

@@ -1,0 +1,59 @@
+{% load static %}
+<nav id="top-nav">
+  <div class="container">
+    <input type="checkbox" name="" id="check">
+    <a href="{% url 'core:index' %}" class="logo-container">
+      <img src="{% static 'img/about/CredaiNagpurLogo.svg' %}" alt="">
+    </a>
+    <a href="{% url 'core:property-list' %}" class="btn solid properties-btn">Buy Property</a>
+    <div class="nav-btn">
+      <div class="nav-links">
+        <ul>
+          <li class="nav-link" style="--i: .6s">
+            <a href="{% url 'core:index' %}">Home</a>
+          </li>
+          <li class="nav-link" style="--i: .85s">
+            <a href="#">About CREDAI<i class="fas fa-caret-down"></i></a>
+            <div class="dropdown">
+              <ul>
+                <li class="dropdown-link">
+                  <a href="{% url 'core:about' %}">About CREDAI</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="{% url 'core:office-bearers' %}">Members</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="{% url 'core:recent-events' %}">Events</a>
+                </li>
+                <li class="dropdown-link">
+                  <a href="{% url 'core:code-of-conduct' %}">Code Of Conduct</a>
+                </li>
+                <div class="arrow"></div>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-link" style="--i: 1.35s">
+            <a href="{% url 'core:government-rules' %}">GR</a>
+          </li>
+          <li class="nav-link" style="--i: 1.35s">
+            <a href="{% url 'core:our-vendors' %}">Our Vendors</a>
+          </li>
+          <li class="nav-link" style="--i: 1.35s">
+            <a href="{% url 'core:contact-us' %}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="log-sign" style="--i: 1.8s">
+        <a href="{% url 'core:property-list' %}" class="btn solid">Buy Property</a>
+      </div>
+    </div>
+    <div class="hamburger-menu-container">
+      <div class="hamburger-menu">
+        <div class="hamburger-line" id="first-line"></div>
+        <div class="hamburger-line" id="second-line"></div>
+        <div class="hamburger-line" id="third-line"></div>
+      </div>
+    </div>
+  </div>
+</nav>
+<script src="{% static 'js/Navbar.js' %}"></script>

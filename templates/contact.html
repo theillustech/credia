@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Credai</title>
+<script src="https://kit.fontawesome.com/ce0f33054f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock title %}
+{% block body %}
+{% if form %}
+<section style="height: 100vh; display: flex; justify-content: center; flex-direction: column; align-items: center">
+  <h2>Thanks!</h2>
+  <p>We received your response!</p>
+</section>
+{% else %}
+<div class="container" id="contact-container">
+  <h1 class="hero-heading">Contact Us</h1>
+  <section class="contactme">
+    <div class="contactme-container">
+      <div class="myinfo-container">
+        <div class="myinfo-interior-container">
+          <h3 class="myinfo-heading">Contact Information</h3>
+          <p class="myinfo-para">Fill the form and we will get back to you as soon as possible</p>
+          <h4 class="myinfo-small-heading"><a class="contact-links" href="tel:+918850-673-264"><i
+                class="fas fa-phone-alt"></i><span class="myinfo-small">+91 9999999999</span> <i
+                class="fas fa-external-link-alt" style="font-size: smaller; margin-left: 0.1rem;"></i></a></h4>
+          <h4 class="myinfo-small-heading"><a class="contact-links" href="mailto:info@credainagpur.org"><i
+                class="fas fa-envelope"></i><span class="myinfo-small">info@credainagpur.org</span> <i
+                class="fas fa-external-link-alt" style="font-size: smaller; margin-left: 0.1rem;"></i></a></h4>
+          <h4 class="myinfo-small-heading"><a class="contact-links"
+              href="https://www.google.com/maps/place/Bilakhadi+Chambers/@18.9675636,72.8361572,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7ce4794ce39fd:0x2449e8deda4196ea!8m2!3d18.9675585!4d72.8383459"
+              target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i><span
+                class="myinfo-small">S.V. Patel Marg, Kingsway, Nagpur</span> <i class="fas fa-external-link-alt"
+                style="font-size: smaller; margin-left: 0.1rem;"></i></a></h4>
+        </div>
+      </div>
+      <form name="contact-me" method="POST" data-netlify="true" class="contactme-form-container">
+        {% csrf_token %}
+        <div class="label-input-container first"><label for="name"><small>Name:</small></label>
+          <input type="text" name="name" id="name" placeholder="e.g. Personal Name">
+        </div>
+        <div class="label-input-container second"><label for="firm"><small>Firm Name:</small></label>
+          <input type="text" name="firm" id="firm" placeholder="e.g. XYZ Developers">
+        </div>
+        <div class="label-input-container third"><label for="email"><small>Email Id:</small></label>
+          <input type="text" name="email" id="email" placeholder="example@example.com">
+        </div>
+        <div class="label-input-container fourth"><label for="phone"><small>Contact Number:</small></label>
+          <input type="text" name="phone" id="phone" placeholder="+91 9999999999">
+        </div>
+        <div class="label-input-container first-select">
+          <div class="dropdown-custom dropdown-custom--slide">
+            <button type="button" class="button" id="#hear-btn">
+              How did you hear about us
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow-custom" viewBox="0 0 20 20">
+                <path
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </button>
+            <div class="menu">
+              <ul id="hear-menu">
+                <li><img src="{% static 'img/contact/ContactSocialMedia.svg' %}">Social Media</li>
+                <li><img src="{% static 'img/contact/ContactPrintMedia.svg' %}">Print Media</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="label-input-container second-select">
+          <div class="dropdown-custom dropdown-custom--slide">
+            <button type="button" class="button" id="#interested-btn">
+              Interested In
+              <svg xmlns="http://www.w3.org/2000/svg" class="arrow-custom" viewBox="0 0 20 20">
+                <path
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </button>
+            <div class="menu">
+              <ul id="interested-menu">
+                <li class="me"><img src="{% static 'img/contact/ContactMembership.svg' %}">Membership</li>
+                <li class="pr"><img src="{% static 'img/contact/ContactProperty.svg' %}">Property</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="label-input-container message">
+          <label for="message"><small>Message</small></label>
+          <textarea name="message" id="message" placeholder="Write your message ..."></textarea>
+        </div>
+        <div class="label-input-container" id="submit-btn-container">
+          <div class="recaptcha-container">
+            <div class="g-recaptcha" data-sitekey="6Ldmh1McAAAAAPlGrsj0CDaqVdGFYKuSOiDSEK3Y"></div>
+          </div>
+        </div>
+        <div class="label-input-container submit">
+          <input id="mybutton" type="submit" value="Send Message">
+        </div>
+        <div class="offscreen">
+          <input type="text" class="interested" name="ii" value="" id="interested-input">
+          <input type="text" class="hear" name="hau" value="" id="hear-about-us-input">
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+</div>
+{% endif %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="{% static 'js/Contact.js' %}"></script>
+{% endblock body %}

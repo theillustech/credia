@@ -1,0 +1,362 @@
+main {
+  margin-top: 4rem;
+}
+
+.section-heading {
+  margin-top: 1rem;
+}
+
+#past-presidents {
+  margin-top: 2rem;
+}
+
+.full-container {
+  max-width: 100%;
+  width: 100%;
+  background: #00552A;
+  margin-top: 1.875rem;
+  padding-top: 1.875rem;
+  padding-bottom: 2rem;
+}
+
+.member-group-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member-group-title {
+  font-size: 1.5rem;
+  text-align: center;
+
+  margin-bottom: 2rem;
+
+  color: #fff;
+}
+
+.top-space {
+  margin-top: 3rem;
+}
+
+.members-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  height: 353px;
+  width: 220px;
+}
+
+.individual-member-container {
+  margin: 0 auto;
+  max-width: 219px;
+}
+
+.member-info-container {
+  color: #fff;
+  text-align: center;
+}
+
+.member-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.firm-name {
+  font-size: min(0.9rem, 4vw);
+  font-weight: 400;
+  color: #efefef;
+  margin-bottom: 0.2rem;
+}
+
+#founder-president {
+  color: #00552A;
+}
+
+.contact-info > li {
+  font-size: 0.8rem;
+  color: #dfdfdf;
+}
+.tenure {
+  font-weight: 500;
+}
+
+.alt-tenure-label {
+  font-size: smaller;
+}
+
+.member-img {
+  width: 100%;
+  height: auto;
+
+  position: relative;
+  border-radius: 5px;
+}
+
+.member-img-container {
+  margin-bottom: 1rem;
+  max-width: 90vw;
+}
+
+.circles-container {
+  display: flex;
+  align-items: center;
+
+  padding-top: 2.25rem;
+}
+
+.circle, .c2, .c3, .c4 {
+  border: #fff solid 2px;
+  border-radius: 50%;
+
+  margin-left: 0.5rem;
+
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.c3, .c4 {
+  border: #00552A solid 2px;
+}
+
+.small-circle {
+  height: 0.625rem;
+  width: 0.625rem;
+  margin-left: 0.5rem;
+}
+
+#left-arrow, #left-arrow-green, #left-arrow-green2 {
+  position: absolute;
+  left:-3rem;
+  top: 27%;
+}
+
+#right-arrow, #right-arrow-green, #right-arrow-green2 {
+  position: absolute;
+  right: -3rem;
+  top: 27%;
+}
+
+#left-arrow-green, #left-arrow-green2 {
+  top: 33%;
+}
+
+#right-arrow-green, #right-arrow-green2 {
+  top: 33%;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+.small-members-container {
+  height: 294px;
+}
+
+.section-container {
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0 0;
+}
+
+th,td,tr {
+  margin: 0;
+}
+
+th {
+  background: #00552A;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+th, td {
+  padding-block: 1rem;
+  text-align: left;
+  padding-left: 1.5rem;
+  border: #6a6a6a solid 1px;
+}
+
+td {
+  font-size: 1.2rem;
+  color: #3a3a3a;
+  background: #EBFFF5;
+}
+
+.table-section {
+  margin-top: 3rem;
+}
+
+#co-opt-members {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 780px) {
+  #main-heading {
+    margin-bottom: 2rem;
+  }
+
+  .section-heading,#past-presidents {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
+
+
+  .full-container {
+    max-width: 90%;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    padding-block: 3.375rem;
+  }
+
+  .member-group-title {
+    text-align: unset;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  .top-space {
+    margin-top: 2rem;
+  }
+
+  #left-arrow, #right-arrow, .circles-container {
+    display: none;
+  }
+
+  .members-container {
+    width: unset;
+    height: unset;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: min(2rem, 2vw);
+    grid-row-gap: min(2rem, 2vw);
+  }
+
+  .member-group-container {
+    display: block;
+  }
+
+  .individual-member-container {
+    max-width: unset;
+    margin: 0;
+
+    display: flex;
+
+    border-radius: 5px;
+
+    background: #fff;
+  }
+
+  .member-img-container {
+    max-width: 215px;
+    max-height: 215px;
+    margin-bottom: 0;
+  }
+  
+  .member-img {
+    height: 100%;
+    width: auto;
+  }
+
+  .member-title {
+    border: unset;
+    clip: unset;
+    height: unset;
+    margin: unset;
+    overflow: hidden;
+    padding: 0;
+    position: static;
+    width: unset;
+
+    margin-bottom: auto;
+    color: #3a3a3a;
+
+    font-weight: 400;
+  }
+
+  .firm-name {
+    font-weight: 400;
+    color: #1f1f1f;
+  }
+
+  .member-info-container {
+    color: #1f1f1f;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem;
+  }
+
+  .remove-bottom-padding {
+    padding-bottom: 0;
+  }
+
+  .contact-info > li {
+    color: #3a3a3a;
+  }
+
+
+  .section-container {
+    background: #00552A;
+  }
+
+  .row-container {
+    flex-direction: column;
+    background: #00552A;
+  }
+
+  .white-font {
+    color: #fff;
+    text-align: center;
+  }
+
+  #founder-president {
+    color: #fff;
+    text-align: center;
+  }
+
+  .small-members-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .remove-bottom-padding {
+    padding-bottom: 0;
+  }
+
+  .table-section {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0 2rem;
+  }
+
+  table {
+    flex: 0 0 calc(50% - 2);
+  }
+
+  .card2 {
+    padding-bottom: 2.5rem;
+  }
+
+  #co-opt-members {
+    margin-top: 0;
+
+    flex-grow: 0;
+  }
+}

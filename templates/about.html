@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<style>
+  .our-core-values-outer-div {
+    background-image: url("{% static 'img/about/OurCoreValuesLower.svg' %}"),
+    url("{% static 'img/about/OurCoreValuesLower.svg' %}");
+  }
+</style>
+<title>About Us</title>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock title %}
+
+{% block body %}
+<div class="about-pdq-main-container">
+  <div class="about-pdq-img-div">
+    <img class="about-pdq-img" src="{% static 'img/about/AboutPDQ.svg' %}" alt="" />
+  </div>
+  <div class="about-inner-div">
+    <div class="about-pdq-heading">
+      <h1>About</h1>&nbsp;
+      <h1 style="color: #00552A;"> CREDAI</h1>
+    </div>
+    <div>
+      <p>Since 1998, India’s renowned association CREDAI– Nagpur Metro has been effortlessly involved in eradicating
+        the
+        problems and obstacles in the path of working of the builders and promotion of their activities.</p><br />
+
+      <p>By representing the builders at the national level through affiliation to Maharashtra and national-level
+        bodies, CREDAI- Nagpur Metro has become the No. 1 trusted Association for the Indian real estate industry.
+        CREDAI being the voice of thousands of members contributes towards bringing more transparency to the sector
+        through its efforts.</p><br />
+
+      <p>India’s apex body for private real estate developers, The Confederation of real estate developers association
+        of India (CREDAI) is representing over 9000 developers through 20 states and 136 cities across the country</p>
+      <br />
+    </div>
+    <div class="about-pdq-button-div">
+      <button class="about-pdq-button"><a href="{% url 'core:contact-us' %}">Contact Us</a></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="our-core-values-outer-div">
+  <div class="our-core-values-heading-div">
+    <h1>Our Core Values</h1>
+  </div>
+  <div class="our-core-values-inner-div">
+    <div class="our-core-values-inner-inner-div">
+      <div class="our-core-values-image-div">
+        <img src="http://placehold.it/50x50" alt="" />
+      </div>
+      <h3 class="our-core-values-content">Performance & Service</h3>
+      <p class="our-core-values-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisi aliquam
+        metus, massa pellentesque massa
+        aliquet. A nisl nec id viverra in mauris nulla.</p>
+    </div>
+    <div class="our-core-values-inner-inner-div">
+      <div class="our-core-values-image-div">
+        <img src="http://placehold.it/50x50" alt="" />
+      </div>
+      <h3 class="our-core-values-content">Performance & Service</h3>
+      <p class="our-core-values-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisi
+        aliquam metus, massa pellentesque massa
+        aliquet. A nisl nec id viverra in mauris nulla.</p>
+    </div>
+    <div class="our-core-values-inner-inner-div">
+      <div class="our-core-values-image-div">
+        <img src="http://placehold.it/50x50" alt="" />
+      </div>
+      <h3 class="our-core-values-content">Performance & Service</h3>
+      <p class="our-core-values-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisi
+        aliquam metus, massa pellentesque massa
+        aliquet. A nisl nec id viverra in mauris nulla.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="our-core-values-green-container">
+  <div class="our-core-values-container our-core-values-flex">
+    <h2 class="our-core-values-section-heading">
+      Our Core Values
+    </h2>
+    <div class="our-core-values-card-container">
+      <div class="our-core-values-card">
+        <div class="our-core-values-img-container">
+          <img src="{% static 'img/about/Performance&ServiceIcon.svg' %}" alt="">
+        </div>
+        <h3 class="our-core-values-card-heading">
+          Performance & Service
+        </h3>
+        <p class="our-core-values-card-para">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisi aliquam metus, massa pellentesque massa
+          aliquet. A nisl nec id viverra in mauris nulla.
+        </p>
+      </div>
+      <div class="our-core-values-card our-core-values-offscreen">
+        <div class="our-core-values-img-container">
+          <img src="{% static 'img/about/Professionalism.svg' %}" alt="">
+        </div>
+        <h3 class="our-core-values-card-heading">
+          Professionalism
+        </h3>
+        <p class="our-core-values-card-para">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisi aliquam metus, massa pellentesque massa
+          aliquet. A nisl nec id viverra in mauris nulla.
+        </p>
+      </div>
+      <div class="our-core-values-card our-core-values-offscreen">
+        <div class="our-core-values-img-container">
+          <img src="{% static 'img/about/ValueToMembers.svg' %}" alt="">
+        </div>
+        <h3 class="our-core-values-card-heading">
+          Value To Members
+        </h3>
+        <p class="our-core-values-card-para">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nisi aliquam metus, massa pellentesque massa
+          aliquet. A nisl nec id viverra in mauris nulla.
+        </p>
+      </div>
+      <img src="{% static 'img/about/LeftArrow.svg' %}" alt="" id="left-arrow">
+      <img src="{% static 'img/about/RightArrow.svg' %}" alt="" id="right-arrow">
+    </div>
+    <div class="our-core-values-circles-container">
+      <div class="our-core-values-circle"></div>
+      <div class="our-core-values-circle small-circle"></div>
+      <div class="our-core-values-circle small-circle"></div>
+    </div>
+  </div>
+</div>
+
+<div class="logos">
+  <div class="image1">
+    <img src ="{% static 'img/about/CREDAI-Youth Wing.jpg' %}">
+  </div>
+  <div class="image2">
+    <img src ="{% static 'img/about/CREDAI Women\'s Wing.jpg' %}">
+  </div>
+</div>
+<div class="membership-laptop-outer-div">
+  <div class="membership-laptop-heading">
+    <h1>Our Membership Benefits</h1>
+    <span>Appointed by MahaRERA on the reconciliation bench, the membership in CREDAI- Nagpur Metro provides you
+      following benefits-</span>
+  </div>
+  <br />
+  <div class="membership-laptop-card-array">
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+      <span>State and National forum Level</span>
+    </div>
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/SubCommitteesAdvisorySupport.svg' %}" alt="" />
+      <span>Sub Committees Advisory Support</span>
+    </div>
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/NetworkWithLeadingPersonalities.svg' %}" alt="" />
+      <span>Network With Leading Personalities</span>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="membership-laptop-card-array">
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/AssuredTrustAndConfidence.svg' %}" alt="" />
+      <span>Assured Trust And Confidence</span>
+    </div>
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/EnhanceLeadershipRoles.svg' %}" alt="" />
+      <span>Enhance Leadership Roles</span>
+    </div>
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/ExclusivePropertyExhibitionForMembers.svg' %}" alt="" />
+      <span>Exclusive Property Exhibition For Members</span>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="membership-laptop-card-array">
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+      <span>CSR Initiatives participation</span>
+    </div>
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+      <span>CREDAI Logo on all media</span>
+    </div>
+    <div class="membership-laptop-card">
+      <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+      <span>Project showcase on CREDAI site</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="membership-green-container">
+  <div class="membership-container membership-flex">
+    <h2 class="membership-heading">
+      Our Membership Benefits
+    </h2>
+    <div class="membership-card-container">
+      <div class="membership-card-array">
+        <div class="membership-card">
+          <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+          <span>State and National forum Level</span>
+        </div>
+        <div class="membership-card">
+          <img src="{% static 'img/about/SubCommitteesAdvisorySupport.svg' %}" alt="" />
+          <span>Sub Committees Advisory Support</span>
+        </div>
+        <div class="membership-card">
+          <img src="{% static 'img/about/NetworkWithLeadingPersonalities.svg' %}" alt="" />
+          <span>Network With Leading Personalities</span>
+        </div>
+      </div>
+      <div class="membership-card-array membership-offscreen">
+        <div class="membership-card">
+          <img src="{% static 'img/about/AssuredTrustAndConfidence.svg' %}" alt="" />
+          <span>Assured Trust And Confidence</span>
+        </div>
+        <div class="membership-card">
+          <img src="{% static 'img/about/EnhanceLeadershipRoles.svg' %}" alt="" />
+          <span>Enhance Leadership Roles</span>
+        </div>
+        <div class="membership-card">
+          <img src="{% static 'img/about/ExclusivePropertyExhibitionForMembers.svg' %}" alt="" />
+          <span>Exclusive Property Exhibition For Members</span>
+        </div>
+      </div>
+      <div class="membership-card-array membership-offscreen">
+        <div class="membership-card">
+          <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+          <span>CSR Initiatives participation</span>
+        </div>
+        <div class="membership-card">
+          <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+          <span>CREDAI Logo on all media</span>
+        </div>
+        <div class="membership-card">
+          <img src="{% static 'img/about/StateAndNationalForumLevel.svg' %}" alt="" />
+          <span>Project showcase on CREDAI site</span>
+        </div>
+      </div>
+
+      <img src="{% static 'img/about/MembershipLeftArrow.svg' %}" alt="" id="membership-left-arrow">
+      <img src="{% static 'img/about/MembershipRightArrow.svg' %}" alt="" id="membership-right-arrow">
+    </div>
+    <div class="membership-circles-container">
+      <div class="membership-circle"></div>
+      <div class="membership-circle membership-small-circle"></div>
+      <div class="membership-circle membership-small-circle"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="about-contact-outer-div">
+  <div class="about-contact-inner-div">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <h1 class="about-contact-heading">Get In Touch For New Membership</h1>
+      <div class="about-contact-row-div">
+        <div class="about-contact-individual-div">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="{{ form.name.value }}">
+        </div>
+        <div class="about-contact-individual-div">
+          <label for="firm">Company</label>
+          <input type="text" id="firm" name="firm" value="{{ form.firm.value }}">
+        </div>
+      </div>
+      <div class="about-contact-row-div">
+        <div class="about-contact-individual-div">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" value="{{ form.email.value }}">
+        </div>
+        <div class="about-contact-individual-div">
+          <label for="phone">Phone</label>
+          <input type="number" id="phone" name="phone" value="{{ form.phone.value }}">
+        </div>
+      </div>
+      <div class="about-contact-message-div">
+        <label for="message">Message</label>
+        <input type="hidden" name="ii" value="Membership">
+        <textarea id="message" name="message" value="{{ form.message.value }}"></textarea>
+      </div>
+      <div class="about-contact-message-button">
+        <button style="cursor: pointer" type="submit">SEND MESSAGE</button>
+      </div>
+    </form>
+  </div>
+  <div class="about-contact-svg-outer-div">
+    <div class="about-contact-svg-div">
+      <img src="{% static 'img/about/AboutPageContactUsSVG.svg' %}" alt="" />
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/Carousel.js' %}"></script>
+<script src="{% static 'js/MembershipCarousel.js' %}"></script>
+{% endblock body %}

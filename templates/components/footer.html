@@ -1,0 +1,28 @@
+{% load static %}
+<footer>
+  <div class="footer-img-container">
+    <img loading="lazy" src="{% static 'img/about/Nagpur.svg' %}" alt="">
+  </div>
+  <div class="container">
+    <div class="footer-info-container">
+      <div class="footer-logo-container">
+        <img loading="lazy" src="{% static 'img/about/CredaiLogo.svg' %}" alt="">
+      </div>
+      <ul class="footer-menu-container remove-list-styles">
+        <li class="footer-menu-link"><a href="{% url 'core:index' %}">Home</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:about' %}">About Credai</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:office-bearers' %}">Members</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:government-rules' %}">GR</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:recent-events' %}">Events</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:our-vendors' %}">Our Vendors</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:property-list' %}">Properties</a></li>
+        <li class="footer-menu-link"><a href="{% url 'core:contact-us' %}">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-separator"></div>
+    <div class="lower-footer">
+      <p class="copyright">&copy; 2021 Credai Nagpur Metro All rights reserved</p>
+      <p class="developed-by">Developed & Designed By <a href="http://illustech.in/">IllusTech</a></p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %}
+<title>Property list!</title>
+<link rel="stylesheet" href="{% static 'css/properties.css' %}">
+<script src="https://kit.fontawesome.com/ce0f33054f.js" crossorigin="anonymous"></script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+{% endblock title %}
+{% block body %}
+<main>
+  <div class="container">
+    <div class="filter-container">
+      <!-- Localities -->
+      <select id="normal-select-1" placeholder-text="localities">
+        {% for property in properties %}
+        <option value="1" class="select-dropdown__list-item">{{property.location}}</option>
+        {% endfor %}
+      </select>
+      <select id="normal-select-2" placeholder-text="bedrooms">
+        {% for property in properties %}
+        <option value="1" class="select-dropdown__list-item">{{property.propertyBhkConfigz}}</option>
+        {% endfor %}
+      </select>
+      <select id="normal-select-3" placeholder-text="price">
+        <option id="min" value="{{max |floatformat:'0' }}" class="select-dropdown__list-item"><i class="fas fa-rupee-sign"></i>{{min |floatformat:"0" }} Lakhs+</option>
+        <option id="max" value="{{max |floatformat:'0' }}" class="select-dropdown__list-item"><i class="fas fa-rupee-sign"></i>{{max |floatformat:"0" }}</option>
+      </select>
+      <select id="normal-select-5" placeholder-text="property type">
+        {% for property in properties %}
+        <option value="1" class="select-dropdown__list-item">{{property.propertyType}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {% for property in properties %}
+    <section class="card-container">
+      <div class="main-card-container">
+        <div class="img-container">
+          <img src="{{property.pdqImage.url}}" alt="">
+        </div>
+        <div class="card-info-container">
+          <div class="property-info">
+            <h2 class="property-name">{{ property.projectName }}</h2>
+            <h2 class="builder-name">By {{ property.builderName }}</h2>
+          </div>
+          <h3 class="property-price"><i class="fas fa-rupee-sign"></i>{{ property.propertyPrice}} Lakh Onwards</h3>
+          <div class="overview-container offscreen-for-mobile">
+            <div class="overview-individual-container">
+              <span class="overview-title">Configurations</span>
+              <span class="overview-value">{{property.propertyBhkConfig}} BHK
+              </span>
+            </div>
+            <div class="overview-individual-container">
+              <span class="overview-title">Possesion</span>
+              <span class="overview-value">{{property.possesion}}</span>
+            </div>
+            <div class="overview-individual-container">
+              <span class="overview-title">Property Status</span>
+              <span class="overview-value">{{property.constructionStatus}}</span>
+            </div>
+            <div class="overview-individual-container">
+              <span class="overview-title">Type of Property</span>
+              <span class="overview-value">{{property.propertyType}}</span>
+            </div>
+            <div class="overview-individual-container">
+              <span class="overview-title">Project Size</span>
+              <span class="overview-value">{{ property.propertySize }} Sqft - {{ property.numberOfUnits }} units</span>
+            </div>
+          </div>
+          <div class="other-info-container">
+            <span class="rera-id"><i class="far fa-check-circle"></i>RERA ID: {{ property.reraID }}</span>
+            <span class="location"><i class="fas fa-map-marker"></i>{{property.location}}</span>
+          </div>
+          <div class="property-info-para offscreen-for-mobile">{{property.propertyAddress}}</div>
+          <div class="card-btn-container offscreen-for-mobile">
+            <a href="{% url 'core:property-detail' property.slug %}" class="view-property">View Property</a>
+            <a id="{{property.slug}}-btn" href="/property-detail/{{property.slug}}/#contact-form" class="contact-builder">contact builder</a>
+          </div>
+        </div>
+      </div>
+      <div class="property-info-para mobile-only">{{property.propertyAddress}}</div>
+      <div class="card-btn-container mobile-only">
+        <a href="{% url 'core:property-detail' property.slug %}" class="view-property">
+          View Property</a>
+        <a id="{{property.slug}}-btn" href="/property-detail/{{property.slug}}/#contact-form" class="contact-builder">contact builder</a>
+      </div>
+    </section>
+
+    
+    <aside id="{{property.slug}}-contact-form" class="contact-form offscreen">
+      <div class="contact-form-wrapper">
+        <span id="{{property.slug}}-close" class="close offscreen">&times;</span>
+        <h3 class="property-card-title sticky-title">Contact Builder</h3>
+        <div class="icon-box-individual-container sticky-icon-box">
+          <div class="icon-container">
+            <img id="contact-form-builder-icon" src={{ property.builderImage.url }} alt="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title"></h4>
+            <h5 class="value"></h5>
+          </div>
+        </div>
+        <form method="post">
+          {% csrf_token %}
+          <div class="individual-input-container">
+            <input type= "hidden" name="projectname" id = "projectname" value= "{{property.projectName}}">
+            <label for="name-field" class="form-label">name</label>
+            <input type="text" name="name" id="name-field" required>
+          </div>
+          <div class="individual-input-container">
+            <label for="phone-field" class="form-label">phone</label>
+            <input type="tel" name="phone" id="phone-field" required>
+          </div>
+          <div class="individual-input-container">
+            <label for="email-field" class="form-label">email</label>
+            <input type="email" name="email" id="" required>
+          </div>
+          <div class="individual-input-container">
+            <label for="message-field" class="form-label">message</label>
+            <textarea name="msg" id=""></textarea>
+          </div>
+          <!-- <div class="individual-input-container">
+            <label for="" class="form-label">interested in</label>
+            <div class="top-tabs">
+              {% for container in floorPlan%}
+                {%if forloop.counter == "1"%}
+                <div class="cat action">
+                <Label>
+                <input type="checkbox" id="button{{container.0}}" name="floorPlan" value="{{container.0}}">
+                <span>{{container.0}} BHK</span>
+                </label>
+              </div>
+                {%else%}
+                <div class="cat action">
+                <label>
+                <input type="checkbox" id="button{{container.0}}" name="floorPlan" class="size{{container.0}}" value="{{container.0}}"/>
+                <span>{{container.0}} BHK</span>
+                </label>
+              </div>
+                {%endif%}
+                {%endfor%}
+            </div>
+            </div> -->
+            <div class="recaptcha-container">
+              <div class="g-recaptcha" data-sitekey="6Ldmh1McAAAAAPlGrsj0CDaqVdGFYKuSOiDSEK3Y"></div>
+            </div>
+          <div class="individual-input-container" id="submit-btn">
+            <input type="submit" value="send enquiry">
+            </div>            
+        </form>
+      </div>
+    </aside>
+    {% endfor %}
+  </div>
+</main>
+<script src="{% static 'js/properties.js' %}"></script>
+{% endblock body %}

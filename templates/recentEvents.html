@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Events</title>
+<script src="https://kit.fontawesome.com/ce0f33054f.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
+<link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+{% endblock title %}
+
+{% block body %}
+<main>
+  <h1 class="container section-heading">Recent Events</h1>
+  <!-- <section class="container">
+    <a class="example-image-link event-col-1" href="{% static 'img/recentEvents/CSR.jpg' %}" data-lightbox="csr-set"
+      data-title="Click the right half of the image to move forward.">
+      <img class="example-image" src="{% static 'img/recentEvents/CSR.jpg' %}" alt="" />
+    </a>
+    <div class="event-col-2">
+      <div class="small-imgs-container">
+      </div>
+      <article class="event-info-container">
+        <h2 class="event-title">corporate social responsibility</h2>
+        <h3 class="event-name-location">Location - October 23, 2020</h3>
+        <h4 class="additional-event-info">donation under corporate social responsibility</h4>
+      </article>
+    </div>
+  </section>
+  <section class="container">
+    <a class="example-image-link event-col-1" href="{% static 'img/recentEvents/MAHACON.jpg' %}"
+      data-lightbox="mahacon-set" data-title="Click the right half of the image to move forward.">
+      <img class="example-image" src="{% static 'img/recentEvents/MAHACON.jpg' %}" alt="" />
+    </a>
+    <div class="event-col-2">
+      <div class="small-imgs-container">
+      </div>
+      <article class="event-info-container">
+        <h2 class="event-title">MAHACON</h2>
+        <h3 class="event-name-location">Mumbai - October 23, 2020</h3>
+        <h4 class="additional-event-info">unveiling of yearbook 2020 of credai nagpur metro in mahacon at mumbai</h4>
+      </article>
+    </div>
+  </section>
+  <section class="container">
+    <a class="example-image-link event-col-1" href="{% static 'img/recentEvents/NIS.jpg' %}" data-lightbox="nis-set"
+      data-title="Click the right half of the image to move forward.">
+      <img loading="lazy" class="example-image" src="{% static 'img/recentEvents/NIS.jpg' %}" alt="" />
+    </a>
+    <div class="event-col-2">
+      <div class="small-imgs-container">
+      </div>
+      <article class="event-info-container">
+        <h2 class="event-title">new india summit</h2>
+        <h3 class="event-name-location">Raipur, Chhatisgarh - October 23, 2020</h3>
+        <h4 class="additional-event-info">3<sup>rd</sup> edition of new india summit at raipur, chhatisgarh</h4>
+      </article>
+    </div>
+  </section> -->
+  <section class="container">
+    {% for event in events %}
+    <a class="example-image-link event-col-1" href="{{event.image.url}}" data-lightbox="sports-carnival-set"
+      data-title="HON’BLE MAYOR SHRI SANDIP JOSHI AT SPORTS CARNIVAL">
+      <img loading="lazy" class="example-image" src="{{event.image.url}}" alt="" />
+    </a>
+    <div class="event-col-2">
+      <div class="small-imgs-container">
+        {% for photo in photos %}
+        <a class="example-image-link individual-small-img-container" href="{{photo.images.url}}"
+          data-lightbox="sports-carnival-set" data-title="FOUNDER PRESIDENT SHRI BALBIR SINGH RENU AT SPORTS CARNIVAL">
+          <img loading="lazy" class="example-image" src="{{photo.images.url}}" alt="" />
+        </a>
+        {% endfor %}
+      </div>
+      <article class="event-info-container">
+        <h2 class="event-title">{{event.title}}</h2>
+        <h3 class="event-name-location">{{event.location}} - {{event.date}}</h3>
+        <h4 class="additional-event-info">{{event.description}}</h4>
+      </article>
+    </div>
+    {% endfor %}
+  </section>
+
+  <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+  {% endblock body %}

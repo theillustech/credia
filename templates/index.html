@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/ce0f33054f.js" crossorigin="anonymous"></script>
+
+<!-- Lightbox Css -->
+<link rel="stylesheet" href="./static/css/lightbox.min.css">
+
+
+<!-- Animate on Scroll CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<!-- Animate CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock title %}
+
+{% block body %}
+<main>
+  <header class="container">
+    <div class="content-container">
+      <h1 class="main-heading animate__animated animate__fadeInBottomLeft">
+        <span class="main-green-font">CREDAI</span> nagpur metro
+      </h1>
+      <p class="main-para animate__animated animate__fadeInBottomLeft">Since 1998, India’s renowned association CREDAI– Nagpur Metro has been effortlessly
+        involved in eradicating the problems and obstacles in the path of working of the builders and promotion of
+        their activities.</p>
+      <a href="{% url 'core:about' %}" class="primary-btn animate__animated animate__fadeInBottomLeft">read more</a>
+    </div>
+    <div class="img-container">
+      <div class="img-colored-effect animate__animated animate__fadeInBottomRight"></div>
+      <img src="{% static 'img\index\Home Page Banner Img.png' %}" alt="" class="header-img animate__animated animate__fadeInBottomRight">
+    </div>
+  </header>
+</main>
+<section class="container main-body-container">
+  <h2 data-aos="fade-up" class="section-heading">our main body</h2>
+  <div class="members-container">
+    <!-- individual Member Container -->
+    <div data-aos="fade-up" class="individual-member-container">
+      <div class="member-img-container" id="member-1">
+        <img loading="lazy" src="{% static 'img/index/VijayDargan.png' %}" alt="">
+      </div>
+      <div class="member-info-container">
+        <h3 data-aos="fade-up" class="member-name">Vijay Kumar Dargan</h3>
+        <h4 data-aos="fade-up" class="member-title">President</h4>
+        <div class="member-information">
+          <h5 data-aos="fade-up" class="firm-name">M/s. Nithyam Constructions</h5>
+          <ul class="contact-info remove-list-styles">
+            <li data-aos="fade-up">darganvijay@rediffmail.com</li>
+            <li data-aos="fade-up">9881125524</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- individual Member Container -->
+    <div data-aos="fade-up" class="individual-member-container">
+      <div class="member-img-container" id="member-2">
+        <img loading="lazy" src="{% static 'img/index/MaheshSadhwani.png' %}" alt="">
+      </div>
+      <div class="member-info-container">
+        <h3 data-aos="fade-up" class="member-name">Mahesh Sadhawani</h3>
+        <h4 data-aos="fade-up" class="member-title">Immediate Past President</h4>
+        <div class="member-information">
+          <h5 data-aos="fade-up" class="firm-name">M/s. Nanik Enterprises</h5>
+          <ul class="contact-info remove-list-styles">
+            <li data-aos="fade-up">nanik.group@yahoo.co.in</li>
+            <li data-aos="fade-up">9422105600</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- individual Member Container -->
+    <div data-aos="fade-up" class="individual-member-container">
+      <div class="member-img-container" id="member-3">
+        <img loading="lazy" src="{% static 'img/index/GauravAgarwala.png' %}" alt="">
+      </div>
+      <div class="member-info-container">
+        <h3 data-aos="fade-up" class="member-name">Gaurav Agrawala</h3>
+        <h4 data-aos="fade-up" class="member-title">Hon. Secretary</h4>
+        <div class="member-information">
+          <h5 data-aos="fade-up" class="firm-name">M/s. Sandeep Dwellers Pvt. Ltd.</h5>
+          <ul class="contact-info remove-list-styles">
+            <li data-aos="fade-up">gaurav@sandeepdwellers.com</li>
+            <li data-aos="fade-up">9823111700</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- individual Member Container -->
+    <div data-aos="fade-up" class="individual-member-container">
+      <div class="member-img-container" id="member-4">
+        <img loading="lazy" src="{% static 'img/index/RajmohanSahu.png' %}" alt="">
+      </div>
+      <div class="member-info-container">
+        <h3 data-aos="fade-up" class="member-name">Rajmohan Sahu</h3>
+        <h4 data-aos="fade-up" class="member-title">Treasurer</h4>
+        <div class="member-information">
+          <h5 data-aos="fade-up"class="firm-name">M/s. Maitreyee Properties Pvt Ltd</h5>
+          <ul class="contact-info remove-list-styles">
+            <li data-aos="fade-up">rasahu@yahoo.com</li>
+            <li data-aos="fade-up">9422105600</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- AOS Js -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{% endblock body %}

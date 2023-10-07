@@ -1,0 +1,578 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/ce0f33054f.js" crossorigin="anonymous"></script>
+
+<!-- Lightbox Css -->
+<link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+
+
+<!-- Animate on Scroll CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<!-- Animate CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+<!-- Import this file -->
+<link rel="stylesheet" href="{% static 'css/propertyDetail.css' %}">
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+<title>{{ property.projectName }}</title>
+{% endblock title %}
+
+{% block body %}
+<main>
+  <header class="container">
+    <!-- <a href="./properties.html" class="back-to-properties-link"><i class="fas fa-long-arrow-alt-left"></i>BACK TO PROPERTIES</a> -->
+    <div class="property-images-container">
+      <a class="example-image-link property-single-img-container main" id="main-property-image" href="{{ images.0.image.url }}" data-lightbox="property-images-set" data-title="Click Right or Left Arrows to Navigate the images">
+        <img class="example-image" src="{{ images.0.image.url }}" alt="property image">
+        <div class="image-overlay-container"><small>TAP TO SEE ALL IMAGES</small></div>
+        <div class="image-overlay-container"><small><i class="fas fa-images"></i>14 IMAGES</small></div>
+      </a>
+        <a class="example-image-link property-single-img-container offscreen main" href="{{ images.1.image.url }}" data-lightbox="property-images-set" data-title="Click Right or Left Arrows to Navigate the images">
+        <img class="example-image" src="{{ images.1.image.url }}" alt="property image">
+      </a>
+      <a class="example-image-link property-single-img-container offscreen main" href="{{ images.2.image.url }}" data-lightbox="property-images-set" data-title="Click Right or Left Arrows to Navigate the images">
+        <img class="example-image" src="{{ images.2.image.url }}" alt="property image">
+      </a>
+      <a class="example-image-link offscreen" href="{{ images.3.image.url }}" data-lightbox="property-images-set" data-title="Click Right or Left Arrows to Navigate the images">
+        <img class="example-image" src="{{ images.3.image.url }}" alt="property image">
+      </a>
+      <a class="example-image-link offscreen" href="{{ images.4.image.url }}" data-lightbox="property-images-set" data-title="Click Right or Left Arrows to Navigate the images">
+        <img class="example-image" src="{{ images.4.image.url }}" alt="property image">
+      </a>
+      <a class="example-image-link offscreen" href="{{ images.5.image.url }}" data-lightbox="property-images-set" data-title="Click Right or Left Arrows to Navigate the images">
+        <img class="example-image" src="{{ images.5.image.url }}" alt="property image">
+      </a>
+    </div>
+    <div class="property-info-container">
+      <div class="property-info-mmain-container">
+        <h1 class="property-name animate__animated animate__fadeInLeft">{{ property.projectName }}</h1>
+      <h2 class="builder-name animate__animated animate__fadeInLeft">By {{ property.builderName }}</h2>
+      <address class="property-address animate__animated animate__fadeInLeft">{{ property.propertyAddress }}</address>
+      </div>
+      <div class="property-info-inner-container">
+        <h4 class="property-price animate__animated animate__fadeInRight"><i class="fas fa-rupee-sign"></i>{{ property.propertyPrice }} Lakhs Onwards</h4>
+        <a id="contact-builder-btn" href="#contact-form" class="contact-builder animate__animated animate__fadeInRight">contact buiLder</a>
+      </div>
+    </div>
+  </header>
+</main>
+<section class="property-body-container">
+  <ul class="remove-list-styles property-body-nav">
+    <li class="property-body-nav__link"><a id="overview-link" href="#overview" >Overview</a></li>
+    <li class="property-body-nav__link"><a id="about-project-link" href="#about-project" >About Project</a></li>
+    <li class="property-body-nav__link"><a id="floor-plans-link" href="#floor-plans" >Floor Plans</a></li>
+    <li class="property-body-nav__link"><a id="amenities-link" href="#amenities" >Amenities</a></li>
+    <li class="property-body-nav__link"><a id="about-developer-link" href="#about-developer" >About Developer</a></li>
+    <li class="property-body-nav__link"><a id="map-view-link" href="#map-view" >Map View</a></li>
+  </ul>
+  <article class="property-body-inner-containers">
+    <div id="overview" class="container-wrapper">
+    <div class="container">
+      <h3 data-aos="fade-up" data-aos-id="overview" class="property-card-title">overview</h3>
+      <div class="icon-box-container">
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/configuration.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">configurations</h4>
+            <h5 data-aos="fade-up" class="value">
+              {%for container in floorPlan%}
+              {%if forloop.counter == floorPlan|length%}{{container.0}}
+              {%else%}{{container.0}},
+              {%endif%}
+              {%endfor%} BHK</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/possesion.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">Possesion</h4>
+            <h5 data-aos="fade-up" class="value">{{property.possesion}}</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/type.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">Type of Property</h4>
+            <h5 data-aos="fade-up" class="value">{{property.propertyType}}</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/projectarea.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">Project Area</h4>
+            <h5 data-aos="fade-up" class="value">{{property.projectArea}}</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/no.png' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">No. of Buildings</h4>
+            <h5 data-aos="fade-up" class="value">{{property.numberOfUnits}} Tower</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/rera.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">RERA ID</h4>
+            <h5 data-aos="fade-up" class="value">{{property.reraID}}</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+        <!-- Individual Icon Box -->
+        <div class="icon-box-individual-container">
+          <div data-aos="fade-up" class="icon-container">
+            <img src="{% static 'img/individual/date.png' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 data-aos="fade-up" class="title">Property Status</h4>
+            <h5 data-aos="fade-up" class="value">{{property.constructionStatus}}</h5>
+          </div>
+        </div>
+        <!-- End of Individual Icon Box -->
+      </div>
+    </div>
+  </div>
+    <div id="about-project" class="container-wrapper">
+    <div class="container">
+      <h3 data-aos="fade-up" data-aos-id="about-project" class="property-card-title">About {{ property.projectName }}</h3>
+      <p data-aos="fade-up" data-aos="fade-up" class="about-property-para" id="about-property-para">{{ property.aboutProject }}</p>
+      <a data-aos="fade-up" href="#" class="read-more-btn" id="about-property-btn">read more about the project <i class="fas fa-chevron-down"></i></a>
+    </div>
+  </div>
+  <!-- Start of Card -->
+  <div id="floor-plans" class="container-wrapper">
+    <div class="container">
+      <h3 class="property-card-title" data-aos="fade-up" data-aos-id="floor-plans">Floor Plan</h3>
+      <div class="container floor-plans">
+        <div class="top-tabs">
+          {% for container in floorPlan%}
+          {%if forloop.counter == 1%}<button class="house-type-togglers selected-tab">{{container.0}} BHK</button>
+          {%else%}
+          <button data-aos="fade-up" class="house-type-togglers">{{container.0}} BHK</button>
+          {%endif%}
+          {%endfor%}
+        </div>
+        <!--1-->
+        {% for container in floorPlan%}
+        <div class="lower-tabs offscreen">
+          {% for item in container.1 %}
+          {%if forloop.counter == 1%}<button data-aos="fade-up" class="saleable-area-togglers selected-tab">{{item.areaSqft}} SQ.FT
+            <span class="img-src offscreen">{{ item.imagePlan.url }}</span></button>
+          {%else%}<button data-aos="fade-up" class="saleable-area-togglers">{{item.areaSqft}} SQ.FT <span class="img-src offscreen">{{item.imagePlan.url }}</span></button>
+          {%endif%}
+          {% endfor %}
+        </div>
+        {%endfor%}
+
+        <div class="content-container">
+          {%for container in floorPlan%}
+          {%for item in container.1%}
+          {%if forloop.counter == 1%}
+          <div class="top-container">
+            <span class="saleable-area-label"></span>
+          </div>
+          {%else%}
+          <div class="top-container offscreen">
+            <span class="saleable-area-label"></span>
+          </div>
+          {% endif %}
+          {%endfor%}
+          {%endfor%}
+        </div>
+        <div class="content-container">
+          <div class="top-container">
+            <span class="saleable-area-label"></span>
+          </div>
+        </div>
+        <div class="floor-plan-img-container">
+          <div data-aos="fade-up" class="individual-floor-plan-img-container">
+            <img id="floor-plan-img" src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Card -->
+  <!-- Start of Card -->
+  <div id="amenities" class="container-wrapper">
+    <div class="container">
+      <h3 data-aos="fade-up" data-aos-id="amenities" class="property-card-title">Amenities</h3>
+      <div class="icon-box-container amenities">
+        <!-- Individual Icon Box -->
+      {% for item in amenities %}
+      {% if item == "1" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/swimming.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Swimming Pool</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "2" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/gym.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Gym</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "3" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/power.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Power Backup</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "4" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/jogging.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Cycling & Jogging</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "5" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/smoke.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Smoke Detectors</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "6" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/earthquake.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Earthquake Resistant</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "7" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/childeren.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Children Play Area</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "8" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/landscape.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Landscape Garden</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "9" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/community.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Community Hall</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "10" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/24x7.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">24x7 Security</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "11" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/sweage.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Sewage Treatment</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "12" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/lib.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Library</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "13" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/spa.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Spa</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "14" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/squash.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Squash Court</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "15" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/aerobic.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Aerobics Room</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "16" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/cricket.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Cricket Pitch</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "17" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/restaurant.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Restaurant</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "18" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/lift.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">lift</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "19" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/CCTV.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">CCTV</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "20" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/carparking.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Car Parking</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "21" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/maintenance.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Maintenance Staff</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "22" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/fire.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Fire Safety</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% if item == "23" %}
+        <div data-aos="fade-up" class="icon-box-individual-container alt">
+          <div class="icon-container">
+            <img src="{% static 'img/individual/yoga.svg' %}" alt="" class="">
+          </div>
+          <div class="box-text-content">
+            <h4 class="title">Yoga Centre</h4>
+          </div>
+        </div>
+      {% endif %}
+      {% endfor %}
+        <!-- End of Individual Icon Box -->
+      </div>
+    </div>
+  </div>
+  <!-- End of Card -->
+  <!-- Start of Card -->
+    <div id="about-developer" class="container-wrapper">
+    <div class="container">
+      <div class="developer-logo-info-container">
+        <!-- <div class="developer-logo-container">
+          <img src={{ property.builderImage.url }} alt="" class="developer-logo">
+        </div> -->
+        <h3 class="property-card-title" data-aos="fade-up" data-aos-id="about-developer">About {{ property.builderName }}</h3>
+      </div>
+      <p class="about-property-para" id="about-developer-para">{{property.builderAbout}}</p>
+      <a href="#" class="read-more-btn" id="about-developer-btn">read more about the project <i class="fas fa-chevron-down"></i></a>
+    </div>
+  </div>
+  <!-- End of Card -->
+  <!-- Start of Card -->
+    <div id="map-view" class="container-wrapper">
+    <div class="container">
+      <div class="developer-logo-info-container">
+        <h3 class="property-card-title" data-aos="fade-up" data-aos-id="map-view">Explore {{ property.location }} - Map View</h3>
+        <div class="developer-logo-container">
+          <img src={{ property.locationImage.url }} alt="" class="developer-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Card -->
+  </article>
+  <aside id="contact-form" data-aos="fade-left" class="contact-form offscreen">
+    <div class="contact-form-wrapper">
+      <span class="close offscreen">&times;</span>
+      <h3 class="property-card-title sticky-title">Contact Builder</h3>
+      <div class="icon-box-individual-container sticky-icon-box">
+        <div class="icon-container">
+          <img id="contact-form-builder-icon" src={{ property.builderImage.url }} alt="">
+        </div>
+        <div class="box-text-content">
+          <h4 class="title"></h4>
+          <h5 class="value"></h5>
+        </div>
+      </div>
+      <form method="post">
+        {% csrf_token %}
+        <div class="individual-input-container">
+          <input type= "hidden" name="projectname" id = "projectname" value= "{{property.projectName}}">
+          <label for="name-field" class="form-label">name</label>
+          <input type="text" name="name" id="name-field" required>
+        </div>
+        <div class="individual-input-container">
+          <label for="phone-field" class="form-label">phone</label>
+          <input type="tel" name="phone" id="phone-field" required>
+        </div>
+        <div class="individual-input-container">
+          <label for="email-field" class="form-label">email</label>
+          <input type="email" name="email" id="" required>
+        </div>
+        <div class="individual-input-container">
+          <label for="message-field" class="form-label">message</label>
+          <textarea name="msg" id=""></textarea>
+        </div>
+        <div class="individual-input-container">
+          <label for="" class="form-label">interested in</label>
+          <div class="top-tabs">
+            {% for container in floorPlan%}
+              {%if forloop.counter == "1"%}
+              <div class="cat action">
+              <Label>
+              <input type="checkbox" id="button{{container.0}}" name="floorPlan" value="{{container.0}}">
+              <span>{{container.0}} BHK</span>
+              </label>
+            </div>
+              {%else%}
+              <div class="cat action">
+              <label>
+              <input type="checkbox" id="button{{container.0}}" name="floorPlan" class="size{{container.0}}" value="{{container.0}}"/>
+              <span>{{container.0}} BHK</span>
+              </label>
+            </div>
+              {%endif%}
+              {%endfor%}
+          </div>
+          </div>
+          <div class="recaptcha-container">
+            <div class="g-recaptcha" data-sitekey="6Ldmh1McAAAAAPlGrsj0CDaqVdGFYKuSOiDSEK3Y"></div>
+          </div>
+        <div class="individual-input-container" id="submit-btn">
+          <input type="submit" value="send enquiry">
+          </div>            
+      </form>
+    </div>
+  </aside> 
+</section>
+
+<!-- LightBox Js -->
+<script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+<!-- AOS Js -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="{% static 'js/individual.js' %}"></script>
+
+{% endblock body %}
